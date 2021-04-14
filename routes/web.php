@@ -56,7 +56,7 @@ route::post('/dosen/proses','DosenController@proses')->name('dosen.tambah');
 route::get('/dosen/edit/{id}','DosenController@edit')->name('dosen.edit');
 route::post('/dosen/update', 'DosenController@update')->name('dosen.edit');
 route::get('/dosen/hapus/{id}','DosenController@hapus');
-route::get('/dosen/cari','DosenController@cari');
+route::get('/dosen/cari','DosenController@carii');
 
 
 //route CRUD Dashboard
