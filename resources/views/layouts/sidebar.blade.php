@@ -6,14 +6,11 @@
     <a href="javascript:void(0)">St</a>
   </div>
   <ul class="sidebar-menu">
+    
+    <li class="menu-header">DOSEN</li>
     <li>
-      <a class="nav-link active" href="{{ route('dashboard.dashboard_dosen') }}">
-        <i class="icon-item fas fa-signal"></i> <span>Dashboard Dosen</span>
-      </a>
-    </li>
-    <li>
-      <a class="nav-link" href="{{ route('dashboard.dashboard_mahasiswa') }}">
-        <i class="icon-item fas fa-signal"></i> <span>Dashboard Mahasiswa</span>
+      <a class="breadcrumb-item" href="{{ route('dashboard.dashboard_dosen') }}">
+        <i class="fas fa-tachometer-alt"></i> <span>Dashboard Dosen</span>
       </a>
     </li>
     <li>
@@ -22,18 +19,24 @@
       </a>
     </li>
     <li>
+      <a class="breadcrumb-item active" href="{{ route('dosen.index') }}">
+        <i class="fas fa-list"></i> <span>Lihat Data Dosen</span>
+      </a>
+    </li>
+    <li class="menu-header">MAHASISWA</li>
+    <li>
+      <a class="breadcrumb-item" href="{{ route('dashboard.dashboard_mahasiswa') }}">
+        <i class="fas fa-tachometer-alt"></i> <span>Dashboard Mahasiswa</span>
+      </a>
+    </li>
+    <li>
       <a class="nav-link" href="{{ url('/mahasiswa/tambah') }}">
         <i class="icon-item fas fa-file"></i> <span>Buat Data Mahasiswa</span>
       </a>
     </li>
     <li>
-      <a class="nav-link" href="{{ route('dosen.index') }}">
-        <i class="icon-item fas fa-file"></i> <span>Data Dosen</span>
-      </a>
-    </li>
-    <li>
-      <a class="nav-link" href="{{ route('mahasiswa.index') }}">
-        <i class="icon-item fas fa-file"></i> <span>Data Mahasiswa</span>
+      <a class="breadcrumb-item active" href="{{ route('mahasiswa.index') }}">
+        <i class="fas fa-list"></i> <span>Lihat Data Mahasiswa</span>
       </a>
     </li>
   </ul>

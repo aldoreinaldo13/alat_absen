@@ -12,9 +12,9 @@ Dashboard
   <div class="section-body">
 
     <div class="card">
-      <div class="card-header">
+      <!-- <div class="card-header">
         <h2>Dashboard Dosen</h2>
-      </div>
+      </div> -->
       <div class="card-body">
         <div class="table-responsive">
         <table class="table table-hover">
