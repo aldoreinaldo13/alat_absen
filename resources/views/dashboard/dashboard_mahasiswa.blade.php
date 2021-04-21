@@ -9,6 +9,9 @@ Dashboard
     <h1>DATA MAHASISWA</h1>    
   </div>
 
+  <a href="/mahasiswa/export_excel_mahasiswa" class="btn btn-success my-3" target="_blank">EXCEL</a>
+
+
   <div class="section-body">
 
     <div class="card">

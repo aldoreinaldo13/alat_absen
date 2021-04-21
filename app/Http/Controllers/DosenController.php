@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\data_dosen;
+use App\Exports\Data_dosenExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class DosenController extends Controller
 {
@@ -61,7 +64,7 @@ class DosenController extends Controller
             // kembali ke halaman data mahasiswa
             return redirect()->route('dosen.index')
                         ->with('success','Post updated successfully');
-    }
+        }
     
         public function hapus($id)
         {
@@ -104,23 +107,23 @@ class DosenController extends Controller
         // }  
             
         public function tampilan($uuid)
-    {
+        {
         if($dosen = data_dosen::where('uuid', $uuid)->first())
-        {        
-        return response()->json([
-            'uuid' => $dosen->uuid,
-            'nama' => $dosen->nama,
-            'nid' => $dosen->nid,
-            'jabatan' => $dosen->jabatan,
-            'email' => $dosen->email,
-            'waktu_datang' => $dosen->waktu_datang,
-            'waktu_keluar' => $dosen->waktu_keluar,
-            'message' => 'Dosen Berhasil Absen'], 200);
+            {        
+            return response()->json([
+                'uuid' => $dosen->uuid,
+                'nama' => $dosen->nama,
+                'nid' => $dosen->nid,
+                'jabatan' => $dosen->jabatan,
+                'email' => $dosen->email,
+                'waktu_datang' => $dosen->waktu_datang,
+                'waktu_keluar' => $dosen->waktu_keluar,
+                'message' => 'Dosen Berhasil Absen'], 200);
+            }
+            else{
+                return response()->json(['message' => 'KARTU MAHASISWA TIDAK DIKENAL'], 400);
+            }
         }
-        else{
-            return response()->json(['message' => 'KARTU MAHASISWA TIDAK DIKENAL'], 400);
-        }
-    }
 
         public function show($id)
         {
@@ -141,6 +144,10 @@ class DosenController extends Controller
                 'nid' => $dosen->nid,
                 'message' => 'Kartu Dosen Berhasil di input'], 200);
         }
+        public function export_excel()
+        {
+            return Excel::download(new Data_dosenExport, 'data_dosen.xlsx');
+        }
     
-    }
+}
 

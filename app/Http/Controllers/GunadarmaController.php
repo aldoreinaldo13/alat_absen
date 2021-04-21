@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\data_mahasiswa;
+use App\Exports\Data_mahasiswaExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class GunadarmaController extends Controller
 {
@@ -165,5 +168,11 @@ class GunadarmaController extends Controller
             $data ['data'] = data_mahasiswa::select('MODE_WAKTU')->find($id);
                 return response()->json($data, 200); 
         }
+
+        public function export_excel_mahasiswa()
+        {
+            return Excel::download(new Data_mahasiswaExport, 'data_mahasiswa.xlsx');
+        }
+
 }
 

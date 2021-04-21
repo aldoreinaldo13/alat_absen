@@ -9,7 +9,10 @@ Dashboard
     <h1>DATA DOSEN</h1>    
   </div>
 
+  <a href="/dosen/export_excel" class="btn btn-success my-3" target="_blank">EXCEL</a>
+
   <div class="section-body">
+
 
     <div class="card">
       <!-- <div class="card-header">

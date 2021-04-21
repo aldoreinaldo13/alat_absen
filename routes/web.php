@@ -65,3 +65,7 @@ route::get('/dashboardmahasiswa','GunadarmaController@dashboard')->name('dashboa
 //route email 
 route::get('/dosen/kirim/{id}','EmailController@sendEmailReminder');
 route::get('/mahasiswa/kirim/{id}','EmailController@sendEmailMahasiswa');
+
+//route excel
+route::get('/dosen/export_excel','DosenController@export_excel');
+route::get('/mahasiswa/export_excel_mahasiswa','GunadarmaController@export_excel_mahasiswa');
